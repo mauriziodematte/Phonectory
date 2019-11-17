@@ -25,17 +25,18 @@ enum PStyleFontWeight:Int{
 class PStyle: NSObject {
     
     // defining base colors for application
-    static let gray = UIColor.init(white: 0.5, alpha: 1)
+    static let veryLightGray = UIColor.init(white: 0.95, alpha: 1)
     static let darkGray = UIColor.init(white: 0.25, alpha: 1)
+    static let gray = UIColor.init(white: 0.5, alpha: 1)
     static let lightGray = UIColor.init(white: 0.75, alpha: 1)
     static let veryDarkGray = UIColor.init(white: 0.05, alpha: 1)
     
-    static let blue = UIColor.init(red: 41.0/255.0, green: 78.0/255.0, blue: 88.0/255.0, alpha: 1)
-    static let lightBlue = UIColor.init(red: 170.0/255.0, green: 210.0/255.0, blue: 225.0/255.0, alpha: 1)
+    static let lightButtonBgColor = UIColor.init(white: 1, alpha: 0.7)
     
     static let red = UIColor.init(red: 178.0/255.0, green: 32.0/255.0, blue: 32.0/255.0, alpha: 1)
+    static let redBgColor = UIColor.init(red: 255.0/255.0, green: 163.0/255.0, blue: 88.0/255.0, alpha: 1)
     
-    // creating custum base font
+    // creating custom base font
     static func baseFont( size: CGFloat, weight: PStyleFontWeight) -> UIFont {
         switch weight {
         case .medium:
@@ -53,10 +54,9 @@ class PStyle: NSObject {
         case .thin:
             return  UIFont(name: "HelveticaNeue-Thin", size: size) ?? UIFont.systemFont(ofSize: size)
         default:
-             return  UIFont(name: "HelveticaNeue-UltraLight", size: size) ?? UIFont.systemFont(ofSize: size)
+            return  UIFont(name: "HelveticaNeue", size: size) ?? UIFont.systemFont(ofSize: size)
         }
     }
-    
     
     static func usableAreaMarginTop(view: UIViewController) -> CGFloat {
         var marginTop : CGFloat = 0.0
@@ -89,6 +89,12 @@ class PStyle: NSObject {
         
         return marginHeight
     }
+    /// returns a percentage due to screen size, used to define dimensions in custom  elements
+    static func screenSizeAdapter() -> CGFloat {
+        if  UIScreen.main.bounds.width <= 320 {
+            return 0.85
+        }
+        return 1
+    }
     
-   
 }

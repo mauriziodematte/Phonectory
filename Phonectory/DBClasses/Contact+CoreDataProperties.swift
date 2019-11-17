@@ -16,9 +16,10 @@ extension Contact {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Contact> {
         return NSFetchRequest<Contact>(entityName: "Contact")
     }
-
+    
     @NSManaged public var name: String?
-    @NSManaged public var surname: String?
+    @NSManaged public var lastname: String?
     @NSManaged public var number: String?
-
+    @NSManaged public var timestamp: Date?
+  
 }
