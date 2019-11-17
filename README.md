@@ -12,8 +12,8 @@ Implements adding, importing from Apple Contacts, Editing and deleting
 To try the program select Product > Run
 
 ## Build and Runtime Requirements
-Xcode 8.0 or later
-iOS 10.0 or later
+Xcode 10.0 or later
+iOS 12.0 or later
     
 ## Author
 Maurizio Demattè, maurizio@dematte.it
